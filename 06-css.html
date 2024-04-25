@@ -1,92 +1,50 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>两列布局示例</title>  
+    <link rel="stylesheet" href="styles.css">  
+</head>  
+<body>  
+    <div class="container">  
+        <div class="column left">  
+            <h2>左侧列</h2>  
+            <p>五一假期</p>  
+        </div>  
+        <div class="column right">  
+            <h2>右侧列</h2>  
+            <p>我来了！</p>  
+        </div>  
+    </div>  
+</body>  
+</html>
+/* 基础样式 */  
+body {  
+    font-family: Arial, sans-serif;  
+    margin: 0;  
+    padding: 0;  
+}  
+  
 .container {  
-    display: flex;  
-  }  
-    
-  .column-left {  
-    flex: 1;  
-    background-color: #f2f2f2;  
-    padding: 10px;  
-  }  
-    
-  .column-right {  
-    flex: 2;  
-    background-color: #e6e6e6;  
-    padding: 10px;  
-  }
-  <div class="container">  
-    <div class="column-left">左侧内容</div>  
-    <div class="column-right">右侧内容</div>  
-  </div>
-  .grid-container {  
-    display: grid;  
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  
-    grid-gap: 10px;  
-  }  
-    
-  .grid-item {  
-    background-color: #ddd;  
+    display: flex; /* 使用Flexbox布局 */  
+    justify-content: space-between; /* 内容在主轴上均匀分布 */  
+}  
+  
+.column {  
+    flex: 1; /* 灵活增长，平分可用空间 */  
     padding: 20px;  
-    text-align: center;  
-  }
-  <div class="grid-container">  
-    <div class="grid-item">卡片1</div>  
-    <div class="grid-item">卡片2</div>  
-    <div class="grid-item">卡片3</div>  
-    <!-- 更多卡片 -->  
-  </div>
-  <div class="grid-container">  
-    <div class="grid-item">卡片1</div>  
-    <div class="grid-item">卡片2</div>  
-    <div class="grid-item">卡片3</div>  
-    <!-- 更多卡片 -->  
-  </div>
-  .box {  
-    width: 100px;  
-    height: 100px;  
-    background-color: #f00;  
-    /* 旋转45度 */  
-    transform: rotate(45deg);  
-    /* 过渡效果，使旋转更平滑 */  
-    transition: transform 0.5s ease;  
-  }  
-    
-  .box:hover {  
-    /* 鼠标悬停时旋转90度 */  
-    transform: rotate(90deg);  
-  }
-  <div class="box"></div>
-  .button {  
-    padding: 10px 20px;  
-    background-color: #007bff;  
-    color: #fff;  
-    border: none;  
-    cursor: pointer;  
-    /* 倾斜并移动 */  
-    transform: skew(20deg) translate(50px, 10px);  
-    /* 过渡效果 */  
-    transition: transform 0.3s ease;  
-  }  
-    
-  .button:hover {  
-    /* 鼠标悬停时恢复原始状态 */  
-    transform: skew(0deg) translate(0, 0);  
-  }
-  <button class="button">点击我</button>
-  @keyframes bounce {  
-    0%, 100% {  
-      transform: translateY(0);  
-    }  
-    50% {  
-      transform: translateY(-50px);  
-    }  
-  }  
-    
-  .ball {  
-    width: 50px;  
-    height: 50px;  
-    background-color: #f00;  
-    border-radius: 50%;  
-    /* 应用弹跳动画 */  
-    animation: bounce 1s infinite;  
-  }
-  <div class="ball"></div>
+    box-sizing: border-box; /* 包括padding和border在内的总宽度 */  
+}  
+  
+.left {  
+    background-color: #f2f2f2; /* 左侧列背景色 */  
+}  
+  
+.right {  
+    background-color: #e6e6e6; /* 右侧列背景色 */  
+}  
+  
+h2 {  
+    margin-top: 0; /* 移除h2元素的上边距 */  
+}
